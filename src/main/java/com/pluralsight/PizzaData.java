@@ -1,16 +1,36 @@
 package com.pluralsight;
 
-import com.pluralsight.PizzaSizes.Large;
-import com.pluralsight.PizzaSizes.Medium;
-import com.pluralsight.PizzaSizes.Personal;
 
-import java.util.Scanner;
+import com.pluralsight.PizzaSizes.Pizza;
 
-public abstract class PizzaData implements Large, Medium, Personal {
+public class PizzaData implements Pizza {
+    //Fields
+    private String size;
+    private String crust;
+    private double price;
 
-    public double largePizza() {
-        return 16.50;
+    public PizzaData(String size, String crust) {
+        this.size = size;
+        this.crust = crust;
     }
 
 
+    @Override
+    public double getPrice() {
+        switch (size) {
+            case "small":
+                return 8.00;
+            case "Medium":
+                return 10.00;
+            case "Large":
+                return 16.50;
+            default:
+                return 0;
+        }
+    }
+
+    @Override
+    public String getDescription() {
+        return size + " " + crust + "Pizza";
+    }
 }

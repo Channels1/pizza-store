@@ -8,8 +8,10 @@ public class PizzaApp {
     public static void main(String[] args) {
         Scanner uKey = new Scanner(System.in);
 
+        PizzaMainMenu startMenu = new PizzaMainMenu();
         boolean run = true;
-        
+
+
         while(run) {
         System.out.println("Welcome to Slice galore");
         System.out.println("==========================");
@@ -21,9 +23,7 @@ public class PizzaApp {
 
         switch (choice) {
             case 1:
-                // Main menu
-
-                System.out.println("This where the main menu goes");
+                startMenu.mainMenu();
                 break;
             case 0:
                 System.out.println("See ya around next time");
